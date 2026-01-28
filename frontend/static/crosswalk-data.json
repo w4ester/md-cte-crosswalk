@@ -1,10 +1,10 @@
 {
   "stats": {
-    "total": 462,
-    "unique_institutions": 35,
+    "total": 477,
+    "unique_institutions": 42,
     "by_institution_type": {
-      "Community College": 261,
-      "University": 201
+      "Community College": 16,
+      "University": 19
     }
   },
   "data": [
