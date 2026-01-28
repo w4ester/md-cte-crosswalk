@@ -1,11 +1,48 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { base } from '$app/paths';
-	import { clusters } from '$lib/stores';
-	import { getClusterColor } from '$lib/stores';
+	import { writable } from 'svelte/store';
 	import * as XLSX from 'xlsx';
 
-	// Types for grouped data
+	// Inline clusters data (no external dependency)
+	const clusters = writable([
+		{ code: 'AED', name: 'Arts, Entertainment, and Design' },
+		{ code: 'AG', name: 'Agriculture' },
+		{ code: 'AM', name: 'Advanced Manufacturing' },
+		{ code: 'CON', name: 'Construction' },
+		{ code: 'DT', name: 'Digital Technology' },
+		{ code: 'ED', name: 'Education' },
+		{ code: 'ENR', name: 'Energy and Natural Resources' },
+		{ code: 'FS', name: 'Financial Services' },
+		{ code: 'HET', name: 'Hospitality, Events, and Tourism' },
+		{ code: 'HHS', name: 'Healthcare and Human Services' },
+		{ code: 'ME', name: 'Management and Entrepreneurship' },
+		{ code: 'MKT', name: 'Marketing and Sales' },
+		{ code: 'PSS', name: 'Public Service and Safety' },
+		{ code: 'SCT', name: 'Supply Chain and Transportation' }
+	]);
+
+	// Inline cluster colors
+	function getClusterColor(code: string): string {
+		const colors: Record<string, string> = {
+			'AED': 'bg-purple-100 text-purple-800 dark:bg-purple-900/40 dark:text-purple-300',
+			'AG': 'bg-green-100 text-green-800 dark:bg-green-900/40 dark:text-green-300',
+			'AM': 'bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300',
+			'CON': 'bg-orange-100 text-orange-800 dark:bg-orange-900/40 dark:text-orange-300',
+			'DT': 'bg-cyan-100 text-cyan-800 dark:bg-cyan-900/40 dark:text-cyan-300',
+			'ED': 'bg-rose-100 text-rose-800 dark:bg-rose-900/40 dark:text-rose-300',
+			'ENR': 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300',
+			'FS': 'bg-slate-100 text-slate-800 dark:bg-slate-700/40 dark:text-slate-300',
+			'HET': 'bg-pink-100 text-pink-800 dark:bg-pink-900/40 dark:text-pink-300',
+			'HHS': 'bg-red-100 text-red-800 dark:bg-red-900/40 dark:text-red-300',
+			'ME': 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900/40 dark:text-indigo-300',
+			'MKT': 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/40 dark:text-yellow-300',
+			'PSS': 'bg-sky-100 text-sky-800 dark:bg-sky-900/40 dark:text-sky-300',
+			'SCT': 'bg-teal-100 text-teal-800 dark:bg-teal-900/40 dark:text-teal-300'
+		};
+		return colors[code] || 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300';
+	}
+
 	interface InstitutionEntry {
 		name: string;
 		program: string;
@@ -38,11 +75,7 @@
 	let stats: CrosswalkStats | null = null;
 	let loading = true;
 	let error = '';
-
-	// Filters
 	let selectedCluster = '';
-
-	// Accordion state - track which programs are expanded
 	let expandedPrograms: Set<string> = new Set();
 
 	function toggleProgram(key: string) {
@@ -51,7 +84,7 @@
 		} else {
 			expandedPrograms.add(key);
 		}
-		expandedPrograms = expandedPrograms; // Trigger reactivity
+		expandedPrograms = expandedPrograms;
 	}
 
 	function expandAll() {
@@ -68,12 +101,10 @@
 		expandedPrograms = new Set();
 	}
 
-	// Filtered data based on selected cluster
 	$: filteredData = selectedCluster
 		? groupedData.filter(g => g.cluster_code === selectedCluster)
 		: groupedData;
 
-	// Count totals
 	$: totalPrograms = filteredData.reduce((sum, c) => sum + c.hs_programs.length, 0);
 	$: totalConnections = filteredData.reduce((sum, c) =>
 		sum + c.hs_programs.reduce((psum, p) =>
@@ -102,155 +133,38 @@
 		loadStaticData();
 	});
 
-	function handleFilterChange() {
-		// Filter is client-side only
-	}
-
-	// Excel Export functionality
 	let exporting = false;
 
 	async function exportToExcel() {
 		if (filteredData.length === 0) return;
 		exporting = true;
-
 		try {
-			// Create workbook
 			const wb = XLSX.utils.book_new();
-
-			// Sheet 1: Full Crosswalk (one row per pathway connection)
 			const crosswalkRows: any[] = [];
-			crosswalkRows.push([
-				'Cluster Code',
-				'Cluster Name',
-				'HS Program',
-				'Industry Credentials',
-				'Institution Type',
-				'Institution Name',
-				'Post-Secondary Program',
-				'Degree Type'
-			]);
+			crosswalkRows.push(['Cluster Code', 'Cluster Name', 'HS Program', 'Industry Credentials', 'Institution Type', 'Institution Name', 'Post-Secondary Program', 'Degree Type']);
 
 			filteredData.forEach(cluster => {
 				cluster.hs_programs.forEach(program => {
 					const ircs = program.ircs.join('; ');
-
-					// Add community college rows
 					program.community_colleges.forEach(cc => {
-						crosswalkRows.push([
-							cluster.cluster_code,
-							cluster.cluster_name,
-							program.name,
-							ircs,
-							'Community College',
-							cc.name,
-							cc.program || '',
-							cc.degree_type || ''
-						]);
+						crosswalkRows.push([cluster.cluster_code, cluster.cluster_name, program.name, ircs, 'Community College', cc.name, cc.program || '', cc.degree_type || '']);
 					});
-
-					// Add university rows
 					program.universities.forEach(uni => {
-						crosswalkRows.push([
-							cluster.cluster_code,
-							cluster.cluster_name,
-							program.name,
-							ircs,
-							'University',
-							uni.name,
-							uni.program || '',
-							uni.degree_type || ''
-						]);
+						crosswalkRows.push([cluster.cluster_code, cluster.cluster_name, program.name, ircs, 'University', uni.name, uni.program || '', uni.degree_type || '']);
 					});
-
-					// If no institutions, still add a row for the program/IRCs
 					if (program.community_colleges.length === 0 && program.universities.length === 0) {
-						crosswalkRows.push([
-							cluster.cluster_code,
-							cluster.cluster_name,
-							program.name,
-							ircs,
-							'',
-							'',
-							'',
-							''
-						]);
+						crosswalkRows.push([cluster.cluster_code, cluster.cluster_name, program.name, ircs, '', '', '', '']);
 					}
 				});
 			});
 
 			const wsMain = XLSX.utils.aoa_to_sheet(crosswalkRows);
-
-			// Set column widths
-			wsMain['!cols'] = [
-				{ wch: 12 },  // Cluster Code
-				{ wch: 30 },  // Cluster Name
-				{ wch: 35 },  // HS Program
-				{ wch: 50 },  // IRCs
-				{ wch: 18 },  // Institution Type
-				{ wch: 35 },  // Institution Name
-				{ wch: 40 },  // Post-Secondary Program
-				{ wch: 12 }   // Degree Type
-			];
+			wsMain['!cols'] = [{ wch: 12 }, { wch: 30 }, { wch: 35 }, { wch: 50 }, { wch: 18 }, { wch: 35 }, { wch: 40 }, { wch: 12 }];
 			XLSX.utils.book_append_sheet(wb, wsMain, 'Crosswalk');
 
-			// Sheet 2: Summary by Program
-			const summaryRows: any[] = [];
-			summaryRows.push([
-				'Cluster',
-				'HS Program',
-				'# IRCs',
-				'# Community Colleges',
-				'# Universities',
-				'Total Pathways'
-			]);
-
-			filteredData.forEach(cluster => {
-				cluster.hs_programs.forEach(program => {
-					summaryRows.push([
-						cluster.cluster_code,
-						program.name,
-						program.ircs.length,
-						program.community_colleges.length,
-						program.universities.length,
-						program.community_colleges.length + program.universities.length
-					]);
-				});
-			});
-
-			const wsSummary = XLSX.utils.aoa_to_sheet(summaryRows);
-			wsSummary['!cols'] = [
-				{ wch: 8 },
-				{ wch: 40 },
-				{ wch: 10 },
-				{ wch: 20 },
-				{ wch: 15 },
-				{ wch: 15 }
-			];
-			XLSX.utils.book_append_sheet(wb, wsSummary, 'Summary');
-
-			// Sheet 3: IRCs by Program
-			const ircRows: any[] = [];
-			ircRows.push(['Cluster', 'HS Program', 'Industry-Recognized Credential']);
-
-			filteredData.forEach(cluster => {
-				cluster.hs_programs.forEach(program => {
-					program.ircs.forEach(irc => {
-						ircRows.push([cluster.cluster_code, program.name, irc]);
-					});
-				});
-			});
-
-			const wsIRCs = XLSX.utils.aoa_to_sheet(ircRows);
-			wsIRCs['!cols'] = [{ wch: 8 }, { wch: 40 }, { wch: 60 }];
-			XLSX.utils.book_append_sheet(wb, wsIRCs, 'IRCs');
-
-			// Generate filename with date
 			const date = new Date().toISOString().split('T')[0];
 			const clusterSuffix = selectedCluster ? `-${selectedCluster}` : '';
-			const filename = `MD-CTE-Crosswalk${clusterSuffix}-${date}.xlsx`;
-
-			// Download
-			XLSX.writeFile(wb, filename);
+			XLSX.writeFile(wb, `MD-CTE-Crosswalk${clusterSuffix}-${date}.xlsx`);
 		} catch (e) {
 			console.error('Export failed:', e);
 		} finally {
@@ -263,300 +177,135 @@
 	<title>Post-Secondary Crosswalk - Maryland CTE</title>
 </svelte:head>
 
-<div class="blueprint-bg min-h-screen">
-	<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-
-		<!-- Page Header -->
-		<header class="mb-10">
-			<div class="flex items-start gap-4 mb-4">
-				<div class="hidden sm:flex items-center justify-center w-14 h-14 rounded-lg bg-gradient-to-br from-msde-red to-msde-navy dark:from-msde-gold dark:to-msde-amber shadow-lg">
-					<svg class="w-7 h-7 text-white dark:text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-					</svg>
-				</div>
-				<div class="flex-1">
-					<h1 class="blueprint-heading text-3xl sm:text-4xl lg:text-5xl">
-						Post-Secondary Crosswalk
-					</h1>
-					<p class="mt-3 text-gray-600 dark:text-gray-300 text-base sm:text-lg max-w-2xl leading-relaxed">
-						Map your high school CTE program to Maryland colleges. Discover credentials you can earn and postsecondary pathways available to you.
-					</p>
-				</div>
-			</div>
-
-			<!-- Vision callout -->
-			<div class="vision-callout mt-6">
-				<div class="flex items-start gap-4">
-					<span class="text-2xl sm:text-3xl" aria-hidden="true">◈</span>
-					<div>
-						<p class="font-display text-lg text-amber-900 dark:text-amber-100">The Vision: IRCs as College Credit</p>
-						<p class="text-sm text-amber-800 dark:text-amber-200 mt-1.5 leading-relaxed">
-							Industry-Recognized Credentials earned in high school could count toward college credit—like AP exams do.
-							This crosswalk shows how pathways align. <strong class="font-semibold">The connection isn't automatic yet</strong>, but it should be.
-						</p>
-					</div>
-				</div>
-			</div>
+<div class="min-h-screen bg-gray-50 dark:bg-slate-900">
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+		<header class="mb-8">
+			<h1 class="text-3xl font-bold text-gray-900 dark:text-white">Maryland CTE Post-Secondary Crosswalk</h1>
+			<p class="mt-2 text-gray-600 dark:text-gray-300">Map your high school CTE program to Maryland colleges and credentials.</p>
 		</header>
 
-		<!-- Stats Grid -->
 		{#if stats}
-			<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-10">
-				<div class="stat-card">
-					<div class="stat-number">{stats.total}</div>
-					<div class="text-sm text-gray-500 dark:text-gray-400 font-medium mt-1.5">Pathway Connections</div>
+			<div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+				<div class="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
+					<div class="text-2xl font-bold text-gray-900 dark:text-white">{stats.total}</div>
+					<div class="text-sm text-gray-500 dark:text-gray-400">Pathway Connections</div>
 				</div>
-				<div class="stat-card">
-					<div class="stat-number">{stats.unique_institutions}</div>
-					<div class="text-sm text-gray-500 dark:text-gray-400 font-medium mt-1.5">MD Institutions</div>
+				<div class="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
+					<div class="text-2xl font-bold text-gray-900 dark:text-white">{stats.unique_institutions}</div>
+					<div class="text-sm text-gray-500 dark:text-gray-400">MD Institutions</div>
 				</div>
-				<div class="stat-card">
-					<div class="stat-number">{stats.by_institution_type['Community College'] || 0}</div>
-					<div class="text-sm text-gray-500 dark:text-gray-400 font-medium mt-1.5">Community Colleges</div>
+				<div class="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
+					<div class="text-2xl font-bold text-gray-900 dark:text-white">{stats.by_institution_type['Community College'] || 0}</div>
+					<div class="text-sm text-gray-500 dark:text-gray-400">Community Colleges</div>
 				</div>
-				<div class="stat-card">
-					<div class="stat-number">{stats.by_institution_type['University'] || 0}</div>
-					<div class="text-sm text-gray-500 dark:text-gray-400 font-medium mt-1.5">Universities</div>
+				<div class="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
+					<div class="text-2xl font-bold text-gray-900 dark:text-white">{stats.by_institution_type['University'] || 0}</div>
+					<div class="text-sm text-gray-500 dark:text-gray-400">Universities</div>
 				</div>
 			</div>
 		{/if}
 
-		<!-- Filter Section -->
-		<div class="filter-section mb-8">
-			<div class="flex flex-col sm:flex-row gap-4 items-start sm:items-end">
-				<div class="flex-1 w-full sm:w-auto">
-					<label for="cluster" class="block text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">
-						Filter by Career Cluster
-					</label>
-					<select
-						id="cluster"
-						bind:value={selectedCluster}
-						on:change={handleFilterChange}
-						class="blueprint-select"
-					>
-						<option value="">All 14 Clusters</option>
-						{#each $clusters as cluster}
-							<option value={cluster.code}>{cluster.code} — {cluster.name}</option>
-						{/each}
-					</select>
-				</div>
-				<button
-					on:click={() => { selectedCluster = ''; handleFilterChange(); }}
-					class="btn-secondary min-h-[44px] w-full sm:w-auto"
-				>
-					Reset Filter
-				</button>
-				<button
-					on:click={exportToExcel}
-					disabled={exporting || loading || filteredData.length === 0}
-					class="btn-primary min-h-[44px] w-full sm:w-auto flex items-center justify-center gap-2"
-				>
-					{#if exporting}
-						<svg class="animate-spin w-4 h-4" fill="none" viewBox="0 0 24 24">
-							<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-							<path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-						</svg>
-						Exporting...
-					{:else}
-						<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-						</svg>
-						Export Excel
-					{/if}
-				</button>
-			</div>
+		<div class="flex flex-wrap gap-4 mb-8">
+			<select bind:value={selectedCluster} class="px-4 py-2 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-white">
+				<option value="">All 14 Clusters</option>
+				{#each $clusters as cluster}
+					<option value={cluster.code}>{cluster.code} — {cluster.name}</option>
+				{/each}
+			</select>
+			<button on:click={() => selectedCluster = ''} class="px-4 py-2 rounded-lg bg-gray-200 dark:bg-slate-700 text-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-slate-600">Reset</button>
+			<button on:click={exportToExcel} disabled={exporting || loading} class="px-4 py-2 rounded-lg bg-green-600 text-white hover:bg-green-700 disabled:opacity-50">
+				{exporting ? 'Exporting...' : 'Export Excel'}
+			</button>
 		</div>
 
-		<!-- Results -->
 		{#if loading}
-			<div class="flex flex-col items-center justify-center py-20">
-				<div class="relative">
-					<div class="w-12 h-12 border-4 border-[var(--blueprint-line)] rounded-full"></div>
-					<div class="absolute top-0 left-0 w-12 h-12 border-4 border-[var(--blueprint-navy)] dark:border-[var(--blueprint-gold)] rounded-full border-t-transparent animate-spin"></div>
-				</div>
-				<p class="mt-4 text-gray-500 dark:text-gray-400 font-medium">Loading crosswalk data...</p>
+			<div class="text-center py-20">
+				<div class="animate-spin w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full mx-auto"></div>
+				<p class="mt-4 text-gray-500">Loading...</p>
 			</div>
 		{:else if error}
-			<div class="bg-red-50 dark:bg-red-900/20 border-2 border-red-200 dark:border-red-700/50 rounded-xl p-6 text-red-700 dark:text-red-300">
-				<div class="flex items-center gap-3">
-					<svg class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-						<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
-					</svg>
-					<span class="font-medium">{error}</span>
-				</div>
-			</div>
-		{:else if filteredData.length === 0}
-			<div class="text-center py-20 pathway-card">
-				<p class="text-gray-500 dark:text-gray-400 text-lg">No matching pathways found.</p>
-			</div>
+			<div class="bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 p-4 rounded-lg">{error}</div>
 		{:else}
-			<!-- Expand/Collapse Controls -->
-			<div class="flex items-center justify-between mb-6 px-1">
-				<p class="program-count">
-					{totalPrograms} programs · {totalConnections} connections
-				</p>
-				<div class="flex items-center gap-1">
-					<button
-						on:click={expandAll}
-						class="text-sm font-medium px-3 py-1.5 rounded-md transition-colors text-msde-navy dark:text-msde-gold hover:bg-msde-navy/5 dark:hover:bg-msde-gold/10"
-					>
-						Expand All
-					</button>
-					<span class="text-gray-300 dark:text-gray-600">|</span>
-					<button
-						on:click={collapseAll}
-						class="text-sm font-medium px-3 py-1.5 rounded-md text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 transition-colors"
-					>
-						Collapse All
-					</button>
+			<div class="flex justify-between items-center mb-4">
+				<span class="text-sm text-gray-500 dark:text-gray-400">{totalPrograms} programs · {totalConnections} connections</span>
+				<div class="flex gap-2">
+					<button on:click={expandAll} class="text-sm text-blue-600 dark:text-blue-400 hover:underline">Expand All</button>
+					<button on:click={collapseAll} class="text-sm text-gray-500 hover:underline">Collapse All</button>
 				</div>
 			</div>
 
-			<!-- Cluster Groups -->
-			<div class="space-y-10">
+			<div class="space-y-8">
 				{#each filteredData as cluster (cluster.cluster_code)}
 					<section>
-						<!-- Cluster Header -->
-						<div class="flex items-center gap-4 mb-5">
-							<span class="cluster-tag {getClusterColor(cluster.cluster_code)}">
-								{cluster.cluster_code}
-							</span>
-							<div class="flex items-baseline gap-3">
-								<h2 class="blueprint-heading text-xl sm:text-2xl">{cluster.cluster_name}</h2>
-								<span class="program-count">({cluster.hs_programs.length})</span>
-							</div>
+						<div class="flex items-center gap-3 mb-4">
+							<span class="px-3 py-1 rounded-full text-sm font-semibold {getClusterColor(cluster.cluster_code)}">{cluster.cluster_code}</span>
+							<h2 class="text-xl font-semibold text-gray-900 dark:text-white">{cluster.cluster_name}</h2>
+							<span class="text-sm text-gray-500">({cluster.hs_programs.length})</span>
 						</div>
 
-						<!-- HS Programs -->
 						<div class="space-y-3">
 							{#each cluster.hs_programs as program (program.name)}
 								{@const programKey = `${cluster.cluster_code}|${program.name}`}
 								{@const isExpanded = expandedPrograms.has(programKey)}
 
-								<div class="pathway-card">
-									<!-- Program Header (Clickable) -->
-									<button
-										on:click={() => toggleProgram(programKey)}
-										class="expand-btn"
-										aria-expanded={isExpanded}
-									>
-										<!-- Chevron -->
-										<svg
-											class="w-5 h-5 shrink-0 chevron-icon text-msde-navy dark:text-msde-gold {isExpanded ? 'expanded' : ''}"
-											fill="none" stroke="currentColor" viewBox="0 0 24 24"
-										>
+								<div class="bg-white dark:bg-slate-800 rounded-lg shadow-sm overflow-hidden">
+									<button on:click={() => toggleProgram(programKey)} class="w-full px-4 py-3 flex items-center gap-3 hover:bg-gray-50 dark:hover:bg-slate-700/50">
+										<svg class="w-5 h-5 text-gray-400 transition-transform {isExpanded ? 'rotate-90' : ''}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
 										</svg>
-
-										<!-- Program Name -->
-										<div class="flex-1 min-w-0">
-											<h3 class="text-lg font-semibold text-gray-900 dark:text-white text-left">
-												{program.name}
-											</h3>
-											<p class="program-count mt-0.5 text-left">
-												{program.ircs.length} IRC{program.ircs.length !== 1 ? 's' : ''} ·
-												{program.community_colleges.length} CC{program.community_colleges.length !== 1 ? 's' : ''} ·
-												{program.universities.length} Universit{program.universities.length !== 1 ? 'ies' : 'y'}
-											</p>
-										</div>
-
-										<!-- Visual indicator -->
-										<div class="hidden sm:flex items-center gap-1.5 opacity-60">
-											{#if program.ircs.length > 0}
-												<span class="w-2 h-2 rounded-full bg-amber-500"></span>
-											{/if}
-											{#if program.community_colleges.length > 0}
-												<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-											{/if}
-											{#if program.universities.length > 0}
-												<span class="w-2 h-2 rounded-full bg-violet-500"></span>
-											{/if}
+										<div class="flex-1 text-left">
+											<h3 class="font-semibold text-gray-900 dark:text-white">{program.name}</h3>
+											<p class="text-sm text-gray-500 dark:text-gray-400">{program.ircs.length} IRCs · {program.community_colleges.length} CCs · {program.universities.length} Universities</p>
 										</div>
 									</button>
 
-									<!-- Expanded Content -->
 									{#if isExpanded}
-										<div class="pathway-content-enter border-t border-gray-100 dark:border-slate-700 p-5 sm:p-6">
-											<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
-
-												<!-- Column 1: IRCs -->
+										<div class="border-t border-gray-100 dark:border-slate-700 p-4">
+											<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 												<div>
-													<div class="column-header">
-														<span class="text-lg">◈</span>
-														<h4>Credentials</h4>
-													</div>
+													<h4 class="font-semibold text-amber-700 dark:text-amber-400 mb-2">Credentials (IRCs)</h4>
 													{#if program.ircs.length > 0}
-														<div class="space-y-2">
+														<div class="space-y-1">
 															{#each program.ircs as irc}
-																<div class="irc-pill">
-																	{irc}
-																</div>
+																<div class="text-sm bg-amber-50 dark:bg-amber-900/30 text-amber-800 dark:text-amber-200 px-2 py-1 rounded">{irc}</div>
 															{/each}
 														</div>
 													{:else}
-														<p class="text-sm text-gray-400 dark:text-gray-500 italic">No IRCs listed</p>
+														<p class="text-sm text-gray-400 italic">None listed</p>
 													{/if}
-													<p class="mt-4 text-xs text-gray-500 dark:text-gray-400">
-														Credentials earned through your HS program
-													</p>
 												</div>
-
-												<!-- Column 2: Community Colleges -->
 												<div>
-													<div class="column-header">
-														<span class="text-lg">⬡</span>
-														<h4>Community Colleges</h4>
-													</div>
+													<h4 class="font-semibold text-emerald-700 dark:text-emerald-400 mb-2">Community Colleges</h4>
 													{#if program.community_colleges.length > 0}
-														<div class="space-y-2.5">
-															{#each program.community_colleges as inst}
-																<div class="cc-card">
-																	<div class="font-semibold text-emerald-900 dark:text-emerald-100 text-sm pr-4">{inst.name}</div>
-																	{#if inst.program}
-																		<div class="text-sm text-emerald-800 dark:text-emerald-200 mt-1 leading-snug">{inst.program}</div>
-																	{/if}
-																	{#if inst.degree_type}
-																		<div class="text-xs text-emerald-700 dark:text-emerald-300 mt-1 font-mono">{inst.degree_type}</div>
-																	{/if}
+														<div class="space-y-2">
+															{#each program.community_colleges as cc}
+																<div class="text-sm bg-emerald-50 dark:bg-emerald-900/30 p-2 rounded">
+																	<div class="font-medium text-emerald-800 dark:text-emerald-200">{cc.name}</div>
+																	{#if cc.program}<div class="text-emerald-700 dark:text-emerald-300">{cc.program}</div>{/if}
+																	{#if cc.degree_type}<div class="text-xs text-emerald-600 dark:text-emerald-400">{cc.degree_type}</div>{/if}
 																</div>
 															{/each}
 														</div>
 													{:else}
-														<p class="text-sm text-gray-400 dark:text-gray-500 italic">No CC programs listed</p>
+														<p class="text-sm text-gray-400 italic">None listed</p>
 													{/if}
 												</div>
-
-												<!-- Column 3: Universities -->
 												<div>
-													<div class="column-header">
-														<span class="text-lg">◆</span>
-														<h4>Universities</h4>
-													</div>
+													<h4 class="font-semibold text-violet-700 dark:text-violet-400 mb-2">Universities</h4>
 													{#if program.universities.length > 0}
-														<div class="space-y-2.5">
-															{#each program.universities as inst}
-																<div class="uni-card">
-																	<div class="font-semibold text-violet-900 dark:text-violet-100 text-sm pr-4">{inst.name}</div>
-																	{#if inst.program}
-																		<div class="text-sm text-violet-800 dark:text-violet-200 mt-1 leading-snug">{inst.program}</div>
-																	{/if}
-																	{#if inst.degree_type}
-																		<div class="text-xs text-violet-700 dark:text-violet-300 mt-1 font-mono">{inst.degree_type}</div>
-																	{/if}
+														<div class="space-y-2">
+															{#each program.universities as uni}
+																<div class="text-sm bg-violet-50 dark:bg-violet-900/30 p-2 rounded">
+																	<div class="font-medium text-violet-800 dark:text-violet-200">{uni.name}</div>
+																	{#if uni.program}<div class="text-violet-700 dark:text-violet-300">{uni.program}</div>{/if}
+																	{#if uni.degree_type}<div class="text-xs text-violet-600 dark:text-violet-400">{uni.degree_type}</div>{/if}
 																</div>
 															{/each}
 														</div>
 													{:else}
-														<p class="text-sm text-gray-400 dark:text-gray-500 italic">No university programs listed</p>
+														<p class="text-sm text-gray-400 italic">None listed</p>
 													{/if}
 												</div>
-											</div>
-
-											<!-- Vision Note -->
-											<div class="mt-8 pt-5 border-t border-dashed border-gray-200 dark:border-slate-700">
-												<p class="text-xs text-gray-500 dark:text-gray-400 text-center max-w-xl mx-auto leading-relaxed">
-													<strong>Future Vision:</strong> IRCs earned in <span class="font-medium">{program.name}</span> could grant credit at these institutions—advocacy needed to make this connection official.
-												</p>
 											</div>
 										</div>
 									{/if}
@@ -565,13 +314,6 @@
 						</div>
 					</section>
 				{/each}
-			</div>
-
-			<!-- Footer Summary -->
-			<div class="mt-12 text-center">
-				<span class="summary-pill">
-					{filteredData.length} cluster{filteredData.length !== 1 ? 's' : ''} · {totalPrograms} programs · {totalConnections} postsec pathways
-				</span>
 			</div>
 		{/if}
 	</div>
