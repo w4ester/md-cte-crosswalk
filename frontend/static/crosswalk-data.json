@@ -1,0 +1,1368 @@
+{
+  "version": "3.01",
+  "source": "Postsecondary Crosswalk3 01.2026.pdf",
+  "stats": {
+    "total": 88,
+    "unique_institutions": 34,
+    "by_institution_type": {
+      "Community College": 45,
+      "University": 43
+    }
+  },
+  "data": [
+    {
+      "cluster_code": "AM",
+      "cluster_name": "Advanced Manufacturing",
+      "hs_programs": [
+        {
+          "name": "Engineering",
+          "ircs": [
+            "ACM \u2013 up to 14 NIMS credentials (CNC operations, milling, turning, grinder, inspection, safety) Chesapeake College \u2013 Certified Production Technician (MSSC CPT) Howard CC \u2013 stackable certificate sequences support credential prep"
+          ],
+          "community_colleges": [
+            {
+              "name": "Hagerstown Community College",
+              "program": "AAS in Advanced Manufacturing Systems Allegany College of Maryland \u2013 Engineering: Automated Manufacturing Technology (AAS & certificate) Harford Community College \u2013 Manufacturing & Production program Chesapeake College \u2013 Advanced Manufacturing certificate (partial) Wor-Wic CC \u2013 Technology Center labs",
+              "degree_type": "AAS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "Morgan State University",
+              "program": "B.S. Mechatronics Engineering UMD \u2013 upper division coursework and laboratory experiences in advanced manufacturing and engineering systems",
+              "degree_type": "BS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        },
+        {
+          "name": "Machining",
+          "ircs": [
+            "Supports hands-on skills",
+            "credentials depend on community college course selection"
+          ],
+          "community_colleges": [
+            {
+              "name": "Carroll CC",
+              "program": "Digital Fabrication & Additive Manufacturing Chesapeake College \u2013 Additive Manufacturing modules Allegany College of Maryland \u2013 Additive Manufacturing courses Wor-Wic CC \u2013 3D printing labs",
+              "degree_type": null,
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "UMD",
+              "program": "Advanced Manufacturing Lab (microfabrication, nanomaterials) Morgan State Mechatronics Engineering",
+              "degree_type": null,
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        }
+      ]
+    },
+    {
+      "cluster_code": "AG",
+      "cluster_name": "Agriculture",
+      "hs_programs": [
+        {
+          "name": "Agriculture Science",
+          "ircs": [
+            "Animal Handling & Welfare",
+            "Commercial Poultry Production Standards Business Planning",
+            "Commodity Marketing",
+            "Farm Management"
+          ],
+          "community_colleges": [
+            {
+              "name": "Cecil College",
+              "program": "AAS Agricultural Sciences (Animal track) \u2013 Chesapeake College \u2013 A AS Agriculture & Environmental Science Cecil & Chesapeake Colleges \u2013 A AS Agriculture Business Focus",
+              "degree_type": "AAS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "UMD",
+              "program": "B .S. Animal Science (Animal & Poultry track) UMES \u2013 B .S. General Agriculture (Animal & Poultry concentration) UMES \u2013 B.S. Agribusiness Management UMD \u2013 B .S. Agricultural & Resource Economics",
+              "degree_type": "BS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        },
+        {
+          "name": "Horticultural Science",
+          "ircs": [
+            "Maryland Pesticide Applicator, Nutrient Management Certification GAP Food Safety, Hydroponics, Compost Management, OSHA Safety Landscape Design Software (AutoCAD/SketchUp), Nursery Operations, OSHA Safety Turfgrass Standards, Pesticide Applicator License Prep, Irrigation Systems Training"
+          ],
+          "community_colleges": [
+            {
+              "name": "Cecil College",
+              "program": "A AS in Agricultural Sciences Chesapeake College \u2013 A AS in Agriculture & Environmental Science PGCC \u2013 U rban Farming Certificate Montgomery College \u2013 E nvironmental Horticulture Certificate Montgomery College \u2013 A AS Landscape Technology Howard CC \u2013 E nvironmental Studies electives w/ horticulture focus Montgomery College & Wor-Wic CC \u2013 N on-credit Turfgrass / Groundskeeping Training",
+              "degree_type": "AS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "UMD",
+              "program": "B .S. Agricultural Science & Technology (Agronomy, Horticulture, Turfgrass) UMES \u2013 B .S. General Agriculture (Plant & Soil or Urban Forestry emphasis) UMD \u2013 B .S. Agricultural Science & Technology (Horticulture) UMES - B .S. Urban Forestry \u2013 UMD \u2013 B .S. Plant Sciences (Landscape) UMES \u2013 B. S. General Agriculture UMD - B.S. Plant Sciences (Turfgrass Management)",
+              "degree_type": "BS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        }
+      ]
+    },
+    {
+      "cluster_code": "AED",
+      "cluster_name": "Arts, Entertainment, and Design",
+      "hs_programs": [
+        {
+          "name": "3D Animation Game Design",
+          "ircs": [
+            "Adobe ACP, Autodesk, Unity/Unreal, Blender",
+            "engine pipelines for 3D modeling/animation",
+            "implicit/explicit curriculum alignment with industry-standard tools"
+          ],
+          "community_colleges": [
+            {
+              "name": "Anne Arundel CC",
+              "program": "Game Development, Visual Arts Professional AAS; Game Development Certificate (LDC) Montgomery College \u2013 Computer Gaming & Simulation AAS; Certificate (LDC) Howard CC \u2013 Game & Simulation Development AA (transfer) Hagerstown CC \u2013 Interactive Design & Game Development AAS Cecil College \u2013 Simulation Design & Gaming AAS",
+              "degree_type": "AAS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "University of Baltimore (USG)",
+              "program": "BS Simulation & Game Design UMD College Park \u2013 BA/BS Immersive Media Design (art & comp tracks) UMBC \u2013 Visual Arts BFA, Animation concentration Towson University \u2013 BFA Art + Design, Digital Art & Design (animation/motion graphics) Morgan State \u2013 SWAN BA/BFA, Computer Animation/Game Art & Design MICA \u2013 BFA Animation; Game Design minor",
+              "degree_type": "BS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        },
+        {
+          "name": "Graphic Communications",
+          "ircs": [
+            "Adobe ACP",
+            "industry-standard workflows: Photoshop, Illustrator, InDesign",
+            "curriculum-aligned with professional design software"
+          ],
+          "community_colleges": [
+            {
+              "name": "Montgomery College",
+              "program": "Graphic Design AAS; Graphic Design with Digital Tools Certificate (LDC) CCBC \u2013 Art & Design AFA/AA with Graphic Design path; Graphic Design Certificate (LDC) Anne Arundel CC \u2013 Graphic Design AAS Prince George\u2019s CC \u2013 Visual Communication/ Graphic Design AAS; Certificate (LDC) Harford CC \u2013 Art+Design Graphic Design AFA/AA Cecil College \u2013 Art & Design AFA/AA w/ Graphic Design; Certificate (LDC) Garrett College \u2013 Graphic/Web Design (AAS concentration) College of Southern Maryland \u2013 Graphic Design Certificate (LDC)",
+              "degree_type": "AAS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "Towson University",
+              "program": "BFA Graphic Design Salisbury University / USG \u2013 BFA Graphic Design UMBC \u2013 BFA Design, Graphic Design concentration Bowie State \u2013 Visual Communication & Digital Media Arts (Advertising/Animation & Motion Graphics) MICA \u2013 BFA Graphic Design",
+              "degree_type": "BFA",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        },
+        {
+          "name": "Video Audio Production",
+          "ircs": [
+            "Adobe Premiere/After Effects, Avid Media Composer, Blackmagic DaVinci Resolve, Pro Tools, Apple Final Cut Pro",
+            "courses emphasize hands-on editing, post-production workflows, and software competency aligned with ACP, Avid, Blackmagic certifications"
+          ],
+          "community_colleges": [
+            {
+              "name": "CCBC",
+              "program": "Digital Media Production Certificate (LDC) College of Southern Maryland \u2013 Digital Media Production AA/AA pathway (Adobe Premiere Pro included) Anne Arundel CC \u2013 Media Production & Film Studies; Media Production Certificate (LDC) Montgomery College \u2013 Media Production AA; Media Production Certificate Harford, Frederick, Hagerstown CCs \u2013 Video Production Certificate",
+              "degree_type": "CERTIFICATE",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "Towson University",
+              "program": "Electronic Media & Film (BA/BS) UMBC \u2013 Visual Arts BA, Cinematic Arts Salisbury University \u2013 Communication BA, Media Production track UMD College Park \u2013 Journalism BA (broadcast/video courses) Morgan State \u2013 SWAN BA/BFA, Film/TV Writing & Production, Computer Animation Bowie State \u2013 VCDMA \u2013 Digital Cinema & Time-Based Media Stevenson University \u2013 BS Film & Moving Image",
+              "degree_type": "BA",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        }
+      ]
+    },
+    {
+      "cluster_code": "CON",
+      "cluster_name": "Construction",
+      "hs_programs": [
+        {
+          "name": "Architecture Design Drafting",
+          "ircs": [
+            "NCCER (construction site safety",
+            "carpentry",
+            "blueprint reading)",
+            "OSHA",
+            "LEED fundamentals Autodesk CAD",
+            "NCCER Drafting",
+            "Blueprint Reading"
+          ],
+          "community_colleges": [
+            {
+              "name": "Montgomery College (Management of Construction concentration) Frederick CC, Anne Arundel CC, Wor",
+              "program": "Wic CC - Architectural/Construction Technology (AAS) Frederick CC - CAD Certificate Montgomery CC & Frederick CC - CAD integrated in AAS Architectural/Construction programs",
+              "degree_type": "AAS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "B.S. Construction Management",
+              "program": "UMES B.S. Construction Management \u2013 Morgan State University Montgomery College & Universities at Shady Grove - Transfer pathways Articulated into BS Construction Management programs",
+              "degree_type": "BS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        },
+        {
+          "name": "Carpentry",
+          "ircs": [
+            "NCCER Core & trade-specific credentials",
+            "OSHA 10-hour",
+            "EPA HVAC",
+            "plumbing/electrical journeyman prep"
+          ],
+          "community_colleges": [
+            {
+              "name": "Wor",
+              "program": "Wic CC & Anne Arundel CC - Skilled Trades Certificates",
+              "degree_type": null,
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "UMES & Morgan State",
+              "program": "AAS \u2192 BS pathways",
+              "degree_type": "AAS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        },
+        {
+          "name": "Electrical",
+          "ircs": [
+            "NCCER Core & trade-specific credentials",
+            "OSHA 10-hour",
+            "EPA HVAC",
+            "plumbing/electrical journeyman prep"
+          ],
+          "community_colleges": [
+            {
+              "name": "Wor",
+              "program": "Wic CC & Anne Arundel CC - Skilled Trades Certificates",
+              "degree_type": null,
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "UMES & Morgan State",
+              "program": "AAS \u2192 BS pathways",
+              "degree_type": "AAS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        },
+        {
+          "name": "Facilities Management",
+          "ircs": [
+            "NCCER Equipment Operator",
+            "CDL prep Advanced project leadership",
+            "Lean Construction",
+            "Sustainability",
+            "Research & Analytics"
+          ],
+          "community_colleges": [
+            {
+              "name": "Wor",
+              "program": "Wic CC & Anne Arundel CC labs (CDL simulators, heavy-equipment labs)",
+              "degree_type": null,
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "AAS \u2192 BS transfer pathways Morgan State University",
+              "program": "M.S.C.M Capitol Technology University - M.Res. in Construction Science & Management",
+              "degree_type": "MS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        },
+        {
+          "name": "HVACR",
+          "ircs": [
+            "NCCER Core & trade-specific credentials",
+            "OSHA 10-hour",
+            "EPA HVAC",
+            "plumbing/electrical journeyman prep"
+          ],
+          "community_colleges": [
+            {
+              "name": "Wor",
+              "program": "Wic CC & Anne Arundel CC - Skilled Trades Certificates",
+              "degree_type": null,
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "UMES & Morgan State",
+              "program": "AAS \u2192 BS pathways",
+              "degree_type": "AAS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        },
+        {
+          "name": "Masonry",
+          "ircs": [
+            "NCCER Core & trade-specific credentials",
+            "OSHA 10-hour",
+            "EPA HVAC",
+            "plumbing/electrical journeyman prep"
+          ],
+          "community_colleges": [
+            {
+              "name": "Wor",
+              "program": "Wic CC & Anne Arundel CC - Skilled Trades Certificates",
+              "degree_type": null,
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "UMES & Morgan State",
+              "program": "AAS \u2192 BS pathways",
+              "degree_type": "AAS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        },
+        {
+          "name": "Plumbing",
+          "ircs": [
+            "NCCER Core & trade-specific credentials",
+            "OSHA 10-hour",
+            "EPA HVAC",
+            "plumbing/electrical journeyman prep"
+          ],
+          "community_colleges": [
+            {
+              "name": "Wor",
+              "program": "Wic CC & Anne Arundel CC - Skilled Trades Certificates",
+              "degree_type": null,
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "UMES & Morgan State",
+              "program": "AAS \u2192 BS pathways",
+              "degree_type": "AAS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        },
+        {
+          "name": "Welding",
+          "ircs": [
+            "NCCER Core & trade-specific credentials",
+            "OSHA 10-hour",
+            "EPA HVAC",
+            "plumbing/electrical journeyman prep"
+          ],
+          "community_colleges": [
+            {
+              "name": "Wor",
+              "program": "Wic CC & Anne Arundel CC - Skilled Trades Certificates",
+              "degree_type": null,
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "UMES & Morgan State",
+              "program": "AAS \u2192 BS pathways",
+              "degree_type": "AAS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        }
+      ]
+    },
+    {
+      "cluster_code": "DT",
+      "cluster_name": "Digital Technology",
+      "hs_programs": [
+        {
+          "name": "Computer Programming",
+          "ircs": [
+            "IT Specialist: Python",
+            "programming fundamentals, data structures, functions",
+            "PCEP prep",
+            "applied Python libraries (NumPy, pandas, matplotlib)"
+          ],
+          "community_colleges": [
+            {
+              "name": "Montgomery College",
+              "program": "Computer Programming Certificate, Python Programming CCBC \u2013 Python Developer Certificate Carroll CC \u2013 Computer Programming Certificate (Python, C++, Java) AACC \u2013 Computer Science A.S. w/ Python courses PGCC \u2013 Computer Programming Certificate, Computer Science A.S. CSM \u2013 Computer Science A.S. Harford CC \u2013 Computer Science A.S., Python Certificate (PCEP prep) FCC \u2013 Game Programming Certificate; Computer Studies Howard CC \u2013 Computer Science A.A. (Transfer) Garrett College \u2013 Computer Science A.S. BCCC \u2013 Computer Information Systems Program",
+              "degree_type": "CERTIFICATE",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "UMD",
+              "program": "Computer Science B.S. (Python courses available) UMBC \u2013 Computer Science B.S. Towson University \u2013 Computer Science B.S., Software Engineering track",
+              "degree_type": "BS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        },
+        {
+          "name": "Cybersecurity",
+          "ircs": [
+            "CompTIA A+, Network+, Security+, CySA+ (optional)",
+            "network defense",
+            "threat detection",
+            "secure coding",
+            "incident response",
+            "NSA/DHS CAE-CD aligned"
+          ],
+          "community_colleges": [
+            {
+              "name": "Montgomery College",
+              "program": "Cybersecurity A.A.S.; Network Security & Computer Forensics Certificates CSM \u2013 Cybersecurity A.A.S.; Cybersecurity Certificate CCBC \u2013 Cybersecurity A.A.S.; Cybersecurity Certificate Carroll CC \u2013 Cybersecurity A.A.S.; Cybersecurity Certificate AACC \u2013 Cybersecurity A.A.S.; Network Security & Computer Forensics Certificates PGCC \u2013 Information Security A.A.S.; Cybersecurity Certificate Harford CC \u2013 Cybersecurity A.A.S.; Cybersecurity Certificate Hagerstown CC \u2013 Info Systems Tech A.A.S. w/ security components Howard CC \u2013 Cybersecurity pathway in Computer Science, A.A. F rederick CC \u2013 Cybersecurity Certificate; IT A.A.S.",
+              "degree_type": "AAS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "UMBC",
+              "program": "Computer Science w/ Cybersecurity Track B.S.; M.S. Cybersecurity (NSA/DHS CAE-CD) UMGC \u2013 Cybersecurity B.S./M.S.; NSA CAE-CD Towson \u2013 Computer Science w/ Cyber Operations Track B.S.; Grad Certificate B owie S tate \u2013 Computer Science w/ Cybersecurity Focus B.S.; Cyber Operations Engineering B.S. Capitol Technology \u2013 Cybersecurity B.S./M.S.; Computer & Cybersecurity Certificate",
+              "degree_type": "BS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        },
+        {
+          "name": "Machine Learning Data Science",
+          "ircs": [
+            "IBM Data Science Professional Certificate",
+            "Google Data Analytics Certification",
+            "Microsoft Azure Data Scientist Associate",
+            "AWS Certified Solutions Architect (optional)",
+            "CompTIA Data+",
+            "Python, SQL, R, ML fundamentals",
+            "Tableau, Power BI"
+          ],
+          "community_colleges": [
+            {
+              "name": "Montgomery College",
+              "program": "Data Science & Analytics A.A.S.; Data Science Certificate; Python, R, Tableau, ML fundamentals PGCC \u2013 Data Science & Analysis Certificate; Python, pandas, NumPy, ML, visualization CCBC \u2013 Data Analytics Certificate; Business Intelligence Analyst Certificate; SQL, Python, Tableau, Power BI, predictive analytics AACC \u2013 Computer Science A.S. w/ Data Science electives; Data Analytics continuing ed Howard CC \u2013 Data Science pathway in Computer Science, A.A.; Business Analytics Certificate Carroll CC \u2013 Computer Science A.S. w/ data analytics coursework CSM \u2013 Computer Science A.S. w/ algorithms; Business Intelligence coursework F rederick CC \u2013 Computer Science A.S.; Data Analytics continuing ed Harford CC \u2013 CIS w/ data analytics electives; Business Analytics Certificate",
+              "degree_type": "AAS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "UMD",
+              "program": "Data Science B.S.; Machine Learning Minor; Data Science M.S. UMBC \u2013 Data Science B.S.; Statistics w/ Machine Learning Track B.S.; Data Science M.P.S. Johns Hopkins \u2013 Applied Mathematics & Statistics w/ Data Science B.S.; Data Science M.S. Towson \u2013 Computer Science B.S. w/ Data Science concentration; Applied IT M.S. w/ Data Science track UMGC \u2013 Data Analytics B.S./M.S.; Biotechnology w/ Bioinformatics M.S. Morgan State \u2013 Computer Science B.S. w/ AI/ML concentration; Advanced Computing M.S. Data Science Bowie State \u2013 Computer Science B.S. w/ data science electives; Applied Computational Mathematics M.S. Salisbury \u2013 Data Science B.S.; Applied Computer Science M.S. Capitol Technology \u2013 Data Science B.S.; Data Analytics M.S. Hood College \u2013 Computer Science B.S. w/ data science concentration; IT M.S.",
+              "degree_type": "BS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        },
+        {
+          "name": "Networking",
+          "ircs": [
+            "CompTIA A+, Network+, Security+ (optional)",
+            "Cisco 100-490 RSTECH (optional)",
+            "Cisco CCNA 200-301 (optional)",
+            "network architecture, routing, switching, security fundamentals",
+            "virtualization",
+            "cloud network"
+          ],
+          "community_colleges": [
+            {
+              "name": "Montgomery College",
+              "program": "Network & Wireless Tech A.A.S.; Networking Certificate; Cisco Networking Academy; CCNA prep; CompTIA A+, Network+ CCBC \u2013 Network Technology A.A.S.; Computer Networking Certificate; Cisco Academy; CompTIA A+, Network+, Security+ AACC \u2013 Networking A.A.S.; Network Administration Certificate; Cisco Academy PGCC \u2013 IT w/ Networking concentration A.A.S.; Network Admin Certificate Carroll CC \u2013 IT A.A.S. w/ networking track; Network Admin Certificate Howard CC \u2013 Network Technology A.A.S.; Cisco Networking Academy; Network Security Certificate CSM \u2013 Info Systems Tech A.A.S. w/ networking concentration; Network Admin Certificate Harford CC \u2013 Computer Information Systems A.A.S.; Network Technology Certificate F rederick CC \u2013 IT A.A.S.; Network Administration Certificate; Cisco Academy Hagerstown CC \u2013 Info Systems Tech A.A.S.; Network Administration pathway",
+              "degree_type": "AAS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "UMGC",
+              "program": "Computer Networks & Cybersecurity B.S.; Network Security Certificate Towson \u2013 IT B.S. w/ Networking Technologies track; Network Administration Certificate UMBC \u2013 Information Systems B.S. w/ networking concentration; Computer Science B.S. w/ systems track Capitol Technology \u2013 Network Security B.S.; Computer Engineering Technology B.S. w/ networking focus Bowie State \u2013 Computer Technology B.S. w/ Network Security track Morgan State \u2013 Information Systems B.S.; Electrical & Computer Engineering B.S. w/ networking components Salisbury \u2013 Information Systems B.S. w/ networking electives Frostburg State \u2013 IT B.S. w/ networking concentration UMD \u2013 Computer Engineering B.S.; Electrical Engineering B.S. w/ telecommunications Johns Hopkins \u2013 Computer Science B.S. w/ networking concentration; Information Security Institute programs",
+              "degree_type": "BS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        }
+      ]
+    },
+    {
+      "cluster_code": "ED",
+      "cluster_name": "Education",
+      "hs_programs": [
+        {
+          "name": "Early Childhood",
+          "ircs": [
+            "Child Development Associate (CDA) Credential \u2013 National credential",
+            "requires portfolio, exam, and professional observation. NAEYC Professional Standards / Competencies \u2013 ethical guidelines, professionalism, developmental practices. Head Start Early Learning Outcomes Framework (ELOF) \u2013 developmental benchmarks for social, emotional, cognitive, language, and physical domains. Common Core State Standards (CCSS) \u2013 early literacy and numeracy readiness. State-specific Early Learning Standards \u2013 aligns programs with Maryland and regional requirements."
+          ],
+          "community_colleges": [
+            {
+              "name": "Montgomery College",
+              "program": "Early Childhood Education Certificate (credit); CDA prep embedded; coursework includes child development, classroom management, social-emotional learning, observation & assessment skills. PGCC \u2013 Early Childhood Education Certificate; CDA competencies, child growth & development, curriculum design, family engagement. CCBC \u2013 Early Childhood Education AAS / Certificate; focuses on CDA functional areas, developmental psychology, learning environments. Howard CC \u2013 Early Childhood Education Certificate / AAS; prepares for CDA portfolio and professional competencies. CSM \u2013 Early Childhood Education Certificate / LDR; child development, classroom management, CDA prep.",
+              "degree_type": "CERTIFICATE",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "Towson University",
+              "program": "B.S. Early Childhood Education; integrates child development theory, curriculum planning, inclusive practices, aligns with CDA standards. UMD \u2013 B.S. Early Childhood Education; developmental psychology, curriculum & instruction, CDA competencies embedded. UMBC \u2013 B.A./B.S. Early Childhood Education; focus on inclusive practices, developmental assessment, family engagement. Salisbury University \u2013 B.S. Early Childhood Education; child development, observation, curriculum development, CDA aligned. University of Baltimore \u2013 B.S. in Education (ECE track); prepares for CDA credentialing, child- centered learning, ethical standards.",
+              "degree_type": "BS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        },
+        {
+          "name": "Teacher Academy",
+          "ircs": [
+            "INTASC Standards \u2013 learner development, instructional practice, assessment, learning environment, professional responsibility. Maryland Essential Dimensions of Teaching (EdoTs) \u2013 evaluation framework for teacher effectiveness. ParaPro Certification \u2013 competency in reading, math, classroom support. Praxis Core Academic Skills \u2013 reading, writing, math readiness for teacher prep. Advance CTE Education Career Cluster Framework \u2013 instructional design, educational technology, diverse learners. ISTE Standards for Educators \u2013 technology integration, digital citizenship. AAQEP & CAEP Standards \u2013 educator program quality, clinical practice, program impact."
+          ],
+          "community_colleges": [
+            {
+              "name": "Montgomery College",
+              "program": "Education Certificate (Early Childhood/Teacher Prep track, credit); focuses on instructional practices, classroom management, learning environment strategies. PGCC \u2013 Teacher Education Certificate; course-level objectives aligned to ParaPro, Praxis Core readiness. CCBC \u2013 Teacher Prep Certificate / AAS; integrates pedagogy, learner development, instructional design. Howard CC \u2013 Teacher Prep Certificate; prepares for ParaPro and Praxis readiness, classroom management, inclusive teaching strategies.",
+              "degree_type": "CERTIFICATE",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "Towson University",
+              "program": "B.S. in Secondary / K-12 Education; pedagogy, learner development, assessment, INTASC alignment. UMD \u2013 B.S. in Teacher Education; integrates INTASC, EdoTs, and Praxis Core; focus on classroom strategies and professional responsibilities. University of Baltimore \u2013 B.S. in Education; instructional planning, learner assessment, ParaPro & Praxis alignment. UMBC \u2013 B.A./B.S. in Education; INTASC, EdoTs, educational technology integration, classroom management.",
+              "degree_type": "BS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        }
+      ]
+    },
+    {
+      "cluster_code": "ENR",
+      "cluster_name": "Energy and Natural Resources",
+      "hs_programs": [
+        {
+          "name": "Renewable Energy",
+          "ircs": [
+            "Advance CTE Career Clusters framework, Chesapeake Bay Landscape Professional (CBLP) standards, ESRI GIS Certification, LEED Green Associate standards, AP Environmental Science standards, EPA guidelines, OSHA safety protocols, Outdoor Learning Project stewardship standards."
+          ],
+          "community_colleges": [
+            {
+              "name": "PGCC",
+              "program": "Renewable Energy & Sustainability Certificate; hands-on labs, environmental systems, and green technologies. Montgomery College \u2013 Environmental & Energy Technology Certificate; applied conservation, GIS mapping, and energy efficiency. Howard CC \u2013 Sustainable Resource Management Certificate; renewable energy systems, conservation practices, and safety protocols.",
+              "degree_type": "CERTIFICATE",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "Towson University",
+              "program": "B.S. in Environmental Science / Sustainability track; renewable energy, conservation planning, and environmental policy. University of Maryland \u2013 B.S. in Environmental Science & Policy; GIS analysis, sustainable energy, and natural resource management.",
+              "degree_type": "BS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        }
+      ]
+    },
+    {
+      "cluster_code": "FS",
+      "cluster_name": "Financial Services",
+      "hs_programs": [
+        {
+          "name": "Financial Services Accounting",
+          "ircs": [
+            "QuickBooks Certified User (CU)",
+            "Excel Expert",
+            "Bloomberg Market Concepts (BMC)",
+            "AIPB prep",
+            "CPA-aligned coursework",
+            "professional bookkeeping skills CFP\u00ae foundational knowledge embedded in finance courses",
+            "financial planning concepts",
+            "Excel & modeling skills for professional preparation Bloomberg Market Concepts (BMC), Excel Expert, analytic software exposure, data management skills"
+          ],
+          "community_colleges": [
+            {
+              "name": "AACC",
+              "program": "Professional Bookkeeper Certificate; Financial Accounting Certificate; Excel/QuickBooks embedded coursework CCBC \u2013 Certified Bookkeeping Certificate; A.A.S. Accounting; QuickBooks & Excel prep; AIPB prep included PGCC \u2013 Accounting Certificate; A.A.S. Accounting Professional; QuickBooks & Excel integrated CSM \u2013 Accounting Certificates (Basic & Advanced) + Letters of Recognition; Excel/bookkeeping skills emphasized Montgomery College \u2013 Accounting Certificate (credit); spreadsheet & accounting software core to coursework AACC, CCBC, PGCC, CSM - Embedded in AAS Accounting/Finance-heavy tracks at CCs; spreadsheet & accounting systems courses integrate core competencies Excel, financial software, and accounting system coursework across community colleges;",
+              "degree_type": "CERTIFICATE",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "UMD",
+              "program": "Smith \u2013 B.S. Accounting; B.S. Finance; Bloomberg terminals & labs; Excel & financial modeling integrated Towson University \u2013 B.S. Accounting; B.S. Finance; Bloomberg Market Concepts; Excel/Tableau in finance labs Salisbury University (Perdue) \u2013 B.S. Accounting/Finance; AACSB; CPA-readiness embedded; Bloomberg access Morgan State \u2013 B.S. Accounting/Finance; Bloomberg terminals; applied analytics UMGC \u2013 B.S. Accounting; Excel, Power BI, Tableau; analytics focus UMD\u2013Smith, Towson, Salisbury, Morgan State - Integrated in four-year finance/accounting programs; exposure via coursework in investments, corporate finance, planning, and analytics UMD\u2013Smith, Towson, Salisbury, Morgan State \u2013 Bloomberg terminals, financial analysis labs, Excel/Power BI/Tableau integrated; practical simulations and modeling",
+              "degree_type": "BS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        }
+      ]
+    },
+    {
+      "cluster_code": "HHS",
+      "cluster_name": "Healthcare and Human Services",
+      "hs_programs": [
+        {
+          "name": "Barbering",
+          "ircs": [],
+          "community_colleges": [],
+          "universities": [],
+          "other": null
+        },
+        {
+          "name": "Biomedical Science",
+          "ircs": [
+            "Lab safety & methods",
+            "foundational life-science competencies",
+            "not test-prep programs Lab safety & methods",
+            "foundational life-science competencies",
+            "not test-prep programs Lab safety & methods",
+            "foundational life-science competencies",
+            "not test-prep programs"
+          ],
+          "community_colleges": [
+            {
+              "name": "Montgomery College",
+              "program": "Science A.S., Biological Science AoC (transfer) Prince George\u2019s CC \u2013 Biology A.S. (transfer) Frederick CC \u2013 Health Sciences A.S.; Pre-Health Professions AoC (transfer)",
+              "degree_type": "AS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "UMBC",
+              "program": "Biological Sciences (BS/BA) UMCP \u2013 Biological Sciences (BS) Towson University \u2013 Biology (BS)",
+              "degree_type": "BS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        },
+        {
+          "name": "Biotechnology",
+          "ircs": [
+            "cGMP, QA, bioprocessing skills",
+            "biotech lab competencies",
+            "aligns to biotech assistant competencies (no 3rd-party credential by default) cGMP, QA, bioprocessing skills",
+            "biotech lab competencies cGMP, QA, bioprocessing skills",
+            "biotech lab competencies Applied lab skills",
+            "workforce + transfer prep Partial overlap",
+            "not test-prep Applied lab skills",
+            "partial alignment"
+          ],
+          "community_colleges": [
+            {
+              "name": "Montgomery College",
+              "program": "Biotechnology A.A.S. , Biotechnology Certificate , Biomanufacturing Certificate Frederick CC \u2013 Biotechnology A.A.S.; Biotechnology Certificate Harford CC \u2013 Biotechnology A.S. (transfer); Cell & Molecular Biology A.S. Hagerstown CC \u2013 Biotechnology Certificate / Degree",
+              "degree_type": "AAS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "UMBC @ USG",
+              "program": "Translational Life Science Technology (TLST) B.S. UMBC \u2013 Biological Sciences (BS)",
+              "degree_type": "BS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        },
+        {
+          "name": "Certified Clinical Medical Assistant",
+          "ircs": [
+            "Eligibility for national MA exams (CCMA/NHA pathway)",
+            "clinical & administrative skill development Eligibility for national MA exams (CCMA/NHA pathway)",
+            "clinical & administrative skill development Eligibility for national MA exams CCMA (NHA) exam pathway"
+          ],
+          "community_colleges": [
+            {
+              "name": "Prince George\u2019s CC",
+              "program": "Medical Assisting Certificate (CAAHEP) , Medical Assisting A.A.S. (CAAHEP) Anne Arundel CC \u2013 Medical Assisting Certificate & A.A.S. (CAAHEP) CCBC \u2013 Medical Assistant (ConEd)",
+              "degree_type": "CERTIFICATE",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "Towson University",
+              "program": "Allied Health B.S.; Public Health; Health Care Management UMD \u2013 Public Health Science B.S.",
+              "degree_type": "BS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        },
+        {
+          "name": "Certified Nursing Assistant",
+          "ircs": [
+            "State nurse aide prep (MBON-aligned)",
+            "patient care skills State nurse aide prep (MBON-aligned) Indirect alignment",
+            "RN curriculum includes CNA-level competencies"
+          ],
+          "community_colleges": [
+            {
+              "name": "Prince George\u2019s CC",
+              "program": "Patient Care Technician (credit certificate) CCBC \u2013 CNA/GNA training (ConEd) Multiple CCs \u2013 A.S./A.D.N. Nursing",
+              "degree_type": "CERTIFICATE",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "UMSON / Towson / Salisbury",
+              "program": "BSN",
+              "degree_type": null,
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        },
+        {
+          "name": "Cosmetology",
+          "ircs": [],
+          "community_colleges": [],
+          "universities": [],
+          "other": null
+        },
+        {
+          "name": "Dental Assistant",
+          "ircs": [
+            "DANB RHS exam prep",
+            "radiography & infection control",
+            "dental assistant & hygiene competencies Prepares for DANB RHS exam Radiology course",
+            "aligns to RDH path"
+          ],
+          "community_colleges": [
+            {
+              "name": "Hagerstown CC",
+              "program": "Dental Assisting Certificate (CODA-recognized) , Dental Hygiene A.A.S. CCBC \u2013 Oral Radiography (ConEd)",
+              "degree_type": "CERTIFICATE",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "UMB",
+              "program": "Dental Hygiene B.S.",
+              "degree_type": "BS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        },
+        {
+          "name": "Nail Technician",
+          "ircs": [],
+          "community_colleges": [],
+          "universities": [],
+          "other": null
+        },
+        {
+          "name": "Pharmacy Technician",
+          "ircs": [
+            "CPhT preparation (PTCB/NHA)",
+            "credit & noncredit pathways",
+            "PharmD is graduate-level licensure, not CPhT prep"
+          ],
+          "community_colleges": [
+            {
+              "name": "Hagerstown CC",
+              "program": "Pharmacy Technician Certificate Allegany College \u2013 Pharmacy Technician Certificate CCBC \u2013 Pharmacy Technician (ConEd)",
+              "degree_type": "CERTIFICATE",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "UMES / UMSOP",
+              "program": "PharmD",
+              "degree_type": null,
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        },
+        {
+          "name": "Physical Rehabilitation",
+          "ircs": [
+            "Licensure-oriented PTA prep (NPTE-PTA) Partial CPT domain overlap (assessment, programming, anatomy) Explicit CPT exam prep Partial CPT domain overlap",
+            "fitness assessment & programming"
+          ],
+          "community_colleges": [
+            {
+              "name": "CCBC",
+              "program": "Physical Therapist Assistant A.A.S. Montgomery College \u2013 Exercise Science A.A ., Personal Trainer Certificate Hagerstown CC \u2013 Exercise Science & Health A.S.; Fitness Training (LOR)",
+              "degree_type": "AAS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "UMCP",
+              "program": "Kinesiology B.S. Towson University \u2013 Exercise Science B.S.",
+              "degree_type": "BS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        }
+      ]
+    },
+    {
+      "cluster_code": "HET",
+      "cluster_name": "Hospitality, Events, and Tourism",
+      "hs_programs": [
+        {
+          "name": "Baking and Pastry Arts",
+          "ircs": [
+            "ServSafe Food Manager / Handler",
+            "ACF foundational competencies",
+            "AHLEI Certified Guest Service Professional (CGSP)"
+          ],
+          "community_colleges": [
+            {
+              "name": "Anne Arundel CC",
+              "program": "Hotel/Restaurant Mgmt AAS, Baking & Pastry Arts Certificate (LDC); ServSafe integrated Howard CC \u2013 Baking & Pastry Arts Management AAS; Certificate (LDC); ServSafe via CMGT-121 Frederick CC \u2013 Baking & Pastry Arts AAS; Certificate (LDC); ServSafe Manager\u00ae & AHLEI CGSP\u00ae",
+              "degree_type": "AAS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "UMES",
+              "program": "Hospitality & Tourism Management BS (main campus & USG) Morgan State University \u2013 Hospitality Management BS",
+              "degree_type": "BS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        },
+        {
+          "name": "Culinary Arts",
+          "ircs": [
+            "ServSafe, ACF accreditation, AHLEI Certified Guest Service Professional (CGSP)",
+            "HACCP / food safety competencies"
+          ],
+          "community_colleges": [
+            {
+              "name": "Anne Arundel CC",
+              "program": "Hotel/Restaurant Mgmt AAS, Culinary Arts Certificate, Fundamentals of Cooking & Baking Certificate (LDC); ServSafe in HRM core Howard CC \u2013 Culinary Arts Management AAS; Culinary Arts Certificate (LDC); ServSafe via CMGT-121 Prince George\u2019s CC \u2013 Culinary Arts AAS; safety/sanitation outcomes Wor-Wic CC \u2013 Culinary Arts AAS; Culinary Arts Certificate (LDC); ACF-accredited Frederick CC \u2013 Culinary Arts & Supervision AAS; Culinary Skills Certificate (LDC); ServSafe Manager\u00ae & AHLEI credentials Montgomery College \u2013 Hospitality Mgmt \u2013 Food & Beverage Management AAS; Food & Beverage Management Certificate (LDC)",
+              "degree_type": "AAS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "UMES",
+              "program": "Hospitality & Tourism Management BS (main campus & USG) Morgan State University \u2013 Hospitality Management BS",
+              "degree_type": "BS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        },
+        {
+          "name": "Hotel Resort Management",
+          "ircs": [
+            "ServSafe Food Manager, AHLEI CGSP\u00ae, ACF/ACPHA accreditation",
+            "event planning & catering competencies",
+            "sanitation and food safety"
+          ],
+          "community_colleges": [
+            {
+              "name": "Anne Arundel CC",
+              "program": "Hospitality Management AAS; Event Planning & Catering Certificate; Hospitality Mgmt Certificate (LDC) Montgomery College \u2013 Hospitality Mgmt AAS (Food & Beverage Mgmt, Management/Supervision tracks) Frederick CC \u2013 Hospitality Management AAS; Hospitality Management Certificate (LDC); ServSafe Manager\u00ae & AHLEI CGSP\u00ae Prince George\u2019s CC \u2013 Hospitality Services Management AAS & Certificate (LDC) Howard CC \u2013 Hospitality Management AAS; ACPHA-accredited; ServSafe Manager eligibility Wor-Wic CC \u2013 Hospitality Management AAS",
+              "degree_type": "AAS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "UMES",
+              "program": "Hospitality & Tourism Management BS (main campus, USG & USMH) Morgan State University \u2013 Hospitality Management BS",
+              "degree_type": "BS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        }
+      ]
+    },
+    {
+      "cluster_code": "ME",
+      "cluster_name": "Management and Entrepreneurship",
+      "hs_programs": [
+        {
+          "name": "Management and Entrepreneurship",
+          "ircs": [
+            "Google Project Management / CAPM \u2013 prep embedded at UMGC and mapped in Towson PM & BA courses Lean Six Sigma White Belt \u2013 principles in operations/quality courses at four-year institutions",
+            "formal exam usually co-curricular QuickBooks \u2013 strongest coverage at community colleges (CCBC, Hagerstown CC, Howard CC) Excel / Tableau \u2013 appear in many management/analytics courses (UMGC, Montgomery College, Hagerstown CC) Google Project Management / CAPM \u2013 embedded or credit- bearing at UMGC",
+            "coursework maps to PMBOK knowledge areas QuickBooks / Excel / Tableau \u2013 foundational PM & analytics tools used in both community college certificates and four-year analytics/PM courses"
+          ],
+          "community_colleges": [
+            {
+              "name": "CCBC",
+              "program": "Entrepreneurship Certificate (credit); startup planning, small-business operations; partial QuickBooks/Excel use AACC \u2013 Entrepreneurship Certificate (credit) + ESI offerings; entrepreneurship capstones; PMI prep via continuing ed (noncredit) Howard CC \u2013 Entrepreneurship Certificate (career, credit); PM frameworks (CAPM/PMP prep optional) CSM \u2013 Small Business & Entrepreneurship Certificate / LDR; venture planning; no vendor cert prep PGCC \u2013 Small Business Management Certificate (credit); business-plan deliverables; no vendor cert Montgomery College (WDCE) \u2013 Project Management Certificate / CAPM prep (noncredit); explicit CAPM/PMP exam prep Montgomery College \u2013 Project Management Certificate (credit); aligned to PMBOK lifecycle & tools; CAPM-aligned content PGCC \u2013 Project Management Certificate (credit); lower-division PM certificate; CAPM prep possible Hagerstown CC \u2013 Office Associate Certificate (noncredit); admin/SMB skills incl. QuickBooks & Excel; direct HS alignment",
+              "degree_type": "CERTIFICATE",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "Towson University",
+              "program": "B.S. Business Admin, Project Management & Business Analysis / Entrepreneurship tracks; MOS Excel Core embedded in analytics course University of Baltimore (Merrick) \u2013 B.S. Business Admin, Entrepreneurship specialization; venture-creation experiences UMGC \u2013 B.S. Business Administration/Management + Undergrad PM certificates; accepts Google Career Certificates (incl. Google PM); PM/CAPM prep optional Salisbury University \u2013 B.S. Management; applied ABLE requirement, no vendor cert Morgan State University \u2013 B.S. Entrepreneurship / Business Admin; entrepreneurship coursework; no vendor cert Towson University \u2013 B.S. Business Admin, Project Management & Business Analysis; PMBOK/BA coverage, capstones, toolchain practice; CAPM-aligned content UMGC \u2013 B.S. Management (PM specialization); undergrad certificate in PM; Google PM / CAPM credit prep; PMP prep via noncredit continuing ed",
+              "degree_type": "BS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        }
+      ]
+    },
+    {
+      "cluster_code": "MKT",
+      "cluster_name": "Marketing and Sales",
+      "hs_programs": [
+        {
+          "name": "Marketing Services",
+          "ircs": [
+            "Adobe ACPs (Photoshop/Illustrator/Express)",
+            "Google Data Analytics",
+            "optional Google Ads, Hootsuite, MOS Excel",
+            "certification prep explicitly in UMGC, MC, PGCC",
+            "other institutions integrate tools in coursework without embedded exam prep Adobe ACPs (Photoshop/Illustrator/Express)",
+            "Google Ads/Analytics",
+            "Hootsuite",
+            "MOS Excel",
+            "tools explicitly taught in UMGC, MC, PGCC",
+            "partially embedded at four-year institutions"
+          ],
+          "community_colleges": [
+            {
+              "name": "Montgomery College",
+              "program": "Digital & Social Media Marketing Certificate (credit); content creation, analytics, social strategy; maps to Adobe/Google/Hootsuite skills PGCC \u2013 Digital Marketing Certificate (credit); SEO/SEM, social, content; aligned to Google Ads/Analytics skills CSM \u2013 Digital Marketing Letter of Recognition; foundation courses, cert prep not specified Hagerstown CC \u2013 Marketing Certificate; course alignment, cert prep not specified PGCC \u2013 Marketing Management A.A.S. (Marketing Management Certificate applies toward AAS); marketing tools, general prep; no explicit cert Hagerstown CC \u2013 Management A.A.S. (Marketing Concentration); marketing coursework; no explicit cert CCBC \u2013 Business Management A.A.S. (Marketing option); general business tools; no explicit cert",
+              "degree_type": "CERTIFICATE",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "Towson University",
+              "program": "B.S. Business Admin, Marketing concentration; hands-on/analytics focus; MOS Excel Core exam embedded in analytics course UMD\u2013Smith \u2013 B.S. Marketing; analytics/technology-infused curriculum; no single vendor cert required UMGC \u2013 B.S. Marketing + Undergraduate Certificate in Digital Marketing; skills in digital/content/data visualization; cert prep optional University of Baltimore \u2013 B.S. Business Admin, Marketing specialization; applied projects; no explicit cert Salisbury University \u2013 B.S. Marketing; experiential projects/competitions; no explicit cert Towson University \u2013 B.S. Business Admin, Marketing concentration; analytics & digital marketing focus UMD\u2013Smith \u2013 B.S. Marketing; analytics/technology curriculum UMGC \u2013 B.S. Digital Marketing + Certificate; direct linkage to SEO/SEM, content marketing, analytics University of Baltimore \u2013 B.S. Business Admin, Marketing; data-driven marketing & digital strategies emphasis Salisbury University \u2013 B.S. Marketing; experiential projects/competitions",
+              "degree_type": "BS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        }
+      ]
+    },
+    {
+      "cluster_code": "PSS",
+      "cluster_name": "Public Service and Safety",
+      "hs_programs": [
+        {
+          "name": "Criminal Justice Law Enforcement",
+          "ircs": [
+            "MPCTC Certification Standards",
+            "Community Policing Development principles",
+            "Law Enforcement Cadet Programs",
+            "LAPSEN guidance."
+          ],
+          "community_colleges": [
+            {
+              "name": "Anne Arundel CC",
+              "program": "Police Science / Criminal Justice Certificate; foundational law enforcement knowledge, community policing principles. CCBC \u2013 Criminal Justice AAS; small-scale investigations, public safety operations. Howard CC \u2013 Criminal Justice Certificate; law enforcement procedures, ethics, and career prep.",
+              "degree_type": "CERTIFICATE",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "Towson University",
+              "program": "B.S. in Criminal Justice; applied policing, legal studies, and leadership. University of Baltimore \u2013 B.S. in Criminal Justice; data-driven policing, community engagement, law & ethics.",
+              "degree_type": "BS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        },
+        {
+          "name": "Emergency Medical Technician",
+          "ircs": [
+            "MIEMSS state certification standards",
+            "NREMT National Certification",
+            "NHTSA EMS guidelines",
+            "OSHA safety standards",
+            "Hazardous Materials Awareness (NFPA 1001)."
+          ],
+          "community_colleges": [
+            {
+              "name": "PGCC",
+              "program": "EMT Certificate; foundational emergency care, patient assessment, and Maryland EMS protocols. Montgomery College \u2013 EMT/EMR Certificate; state-aligned EMS standards, first responder training. Howard CC \u2013 EMT Certificate; hands-on clinical skills, emergency response procedures.",
+              "degree_type": "CERTIFICATE",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "UMGC",
+              "program": "B.S. in Health Sciences / Emergency Services track; integrates EMS knowledge, leadership, and health care management. Towson University \u2013 B.S. in Emergency Health Services (transfer-friendly); applied EMS, disaster response, public safety integration.",
+              "degree_type": "BS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        },
+        {
+          "name": "Emergency Response",
+          "ircs": [
+            "FEMA ICS (Incident Command System)",
+            "OSHA safety standards",
+            "CERT volunteer training",
+            "CHPP (Certified Homeland Protection Professional)",
+            "IAEM CEM (Certified Emergency Manager) framework."
+          ],
+          "community_colleges": [
+            {
+              "name": "PGCC",
+              "program": "Emergency Response Certificate; disaster preparedness, ICS basics, and volunteer coordination. Montgomery College \u2013 Emergency Response / Management Certificate; OSHA safety, hazard recognition, emergency planning. Howard CC \u2013 Emergency Response Certificate; hands-on disaster drills, ICS application, volunteer coordination.",
+              "degree_type": "CERTIFICATE",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "UMGC",
+              "program": "B.S. in Emergency Management; leadership in disaster response, hazard mitigation, and public safety systems. Towson University \u2013 B.S. in Emergency Services / Public Safety; advanced emergency response, ICS leadership, and homeland security integration.",
+              "degree_type": "BS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        },
+        {
+          "name": "Firefighter",
+          "ircs": [
+            "NFPA 1001 Firefighter I & II Standards",
+            "OSHA safety standards",
+            "MIEMSS EMR guidance",
+            "MFRI certifications",
+            "NREMT EMT certification",
+            "Hazardous Materials Awareness (NFPA)",
+            "IFSTA instructional resources."
+          ],
+          "community_colleges": [
+            {
+              "name": "PGCC",
+              "program": "Fire & Rescue Certificate; state-aligned firefighting principles, emergency response, and EMS integration. Montgomery College \u2013 Fire & Rescue / EMT Certificate; NFPA-compliant training, hazard awareness, OSHA safety. Howard CC \u2013 Firefighter Certificate; practical firefighting skills, emergency response, hazardous materials handling.",
+              "degree_type": "CERTIFICATE",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "UMGC",
+              "program": "B.S. in Emergency Management / Fire Services track; leadership, hazard mitigation, EMS, and public safety systems integration. Towson University \u2013 B.S. in Fire & Emergency Services; advanced firefighting, leadership, and integrated emergency management.",
+              "degree_type": "BS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        },
+        {
+          "name": "JROTC Armed Forces",
+          "ircs": [
+            "DoD Instruction 1205.13 (JROTC Program)",
+            "Advance CTE Career Clusters",
+            "Military Leadership Education & Training (LET I\u2013IV)",
+            "branch-specific leadership",
+            "aerospace",
+            "naval",
+            "or expeditionary standards."
+          ],
+          "community_colleges": [
+            {
+              "name": "High school",
+              "program": "based JROTC programs (Army, Navy, Air Force, Marine Corps); foundational leadership, citizenship, and military discipline.",
+              "degree_type": null,
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "Articulates to service academies or postsecondary pathways in Criminal Justice, Public Safety, or Emergency Management; scholarship and ROTC options available.",
+              "program": null,
+              "degree_type": null,
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        }
+      ]
+    },
+    {
+      "cluster_code": "SCT",
+      "cluster_name": "Supply Chain and Transportation",
+      "hs_programs": [
+        {
+          "name": "Aeronautics Technology",
+          "ircs": [
+            "FAA Airframe & Powerplant (A&P) prep",
+            "FAA Part 141 flight hours",
+            "OSHA",
+            "UAS certificates (where applicable)"
+          ],
+          "community_colleges": [
+            {
+              "name": "CCBC",
+              "program": "Aviation Management AAS , Aviation Flight Technology Engineering Transfer Montgomery College - AAS (Aerospace focus)",
+              "degree_type": "AAS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "UMES",
+              "program": "B.S. Aviation Science (Management & Professional Pilot tracks) UMD - B.S. Aerospace Engineering",
+              "degree_type": "BS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        },
+        {
+          "name": "Autobody Collision Repair",
+          "ircs": [
+            "ASE Entry-Level & Professional",
+            "I-CAR certifications",
+            "OSHA 10/30"
+          ],
+          "community_colleges": [
+            {
+              "name": "Montgomery College & CCBC",
+              "program": "Automotive Technology AAS w/ Autobody specializatio n PGCC \u2013 Autobody Repair Certificate",
+              "degree_type": "AAS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [],
+          "other": null
+        },
+        {
+          "name": "Automotive Technology",
+          "ircs": [
+            "ASE Entry-Level \u2192 ASE Professional",
+            "EPA 609 Refrigerant Recovery",
+            "OSHA safety"
+          ],
+          "community_colleges": [
+            {
+              "name": "Montgomery College, CCBC, PGCC, ACM, CSM",
+              "program": "Automotive Technology AAS",
+              "degree_type": "AAS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "UMES, UMGC",
+              "program": "BS Technology Management",
+              "degree_type": "BS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        },
+        {
+          "name": "Marine Maintenance Repair",
+          "ircs": [
+            "ABYC Marine Service Technician",
+            "Yamaha Marine University modules",
+            "NCCER Maritime Electrical",
+            "OSHA 10/30"
+          ],
+          "community_colleges": [
+            {
+              "name": "AACC",
+              "program": "Marine Service Technician Certificate/AAS Chesapeake College - Continuing Ed Marine programs",
+              "degree_type": "CERTIFICATE",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [],
+          "other": null
+        },
+        {
+          "name": "Medium-Heavy Truck Equipment",
+          "ircs": [
+            "ASE Diesel",
+            "Brakes",
+            "Electrical/Electronics",
+            "EPA certifications",
+            "OSHA"
+          ],
+          "community_colleges": [
+            {
+              "name": "ACM, CCBC",
+              "program": "Diesel Technology / Truck Tech AAS",
+              "degree_type": "AAS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "universities": [
+            {
+              "name": "Morgan State",
+              "program": "BS Transportation Systems",
+              "degree_type": "BS",
+              "ircs": null,
+              "key_features": null
+            }
+          ],
+          "other": null
+        }
+      ]
+    }
+  ]
+}
